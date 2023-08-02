@@ -5,25 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
+    [SerializeField] private GameInput gameInput;
 
     private bool isWalking;
 
-    GameInput gameInput;
 
-
-    private void Awake()
-    {
-        gameInput = GetComponent<GameInput>();
-    }
-
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        Vector2 inputVector = gameInput.GetMovementVector();
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
         transform.position += moveDir * speed * Time.deltaTime;
