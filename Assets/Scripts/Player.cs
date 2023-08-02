@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private GameInput gameInput;
 
     private bool isWalking;
@@ -14,13 +14,23 @@ public class Player : MonoBehaviour
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
+
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
-        transform.position += moveDir * speed * Time.deltaTime;
 
-        isWalking = moveDir != Vector3.zero;
+        float playerRadius = 0.7f;
+        float playerHeight = 2f;
+        float moveDistance = moveSpeed * Time.deltaTime;
+        bool canMove = Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance);
 
-        float rotationSpeed = 10f;
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, rotationSpeed * Time.deltaTime);
+        if(!canMove)
+        {
+            transform.position += moveDir * moveSpeed * Time.deltaTime;
+
+            isWalking = moveDir != Vector3.zero;
+
+            float rotationSpeed = 10f;
+            transform.forward = Vector3.Slerp(transform.forward, moveDir, rotationSpeed * Time.deltaTime);
+        }
     }
 
     public bool IsWalking()

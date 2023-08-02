@@ -6,6 +6,13 @@ public class HandDetection : MonoBehaviour
 {
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.name);
+        if (other.TryGetComponent(out ClearCounter clearCounter))
+        {
+            Debug.Log("Touching Clear Counter");
+        }
+        else
+        {
+            Debug.Log(other.name);
+        }
     }
 }

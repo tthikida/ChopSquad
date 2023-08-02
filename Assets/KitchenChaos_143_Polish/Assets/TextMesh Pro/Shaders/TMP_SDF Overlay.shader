@@ -2,15 +2,15 @@ Shader "TextMeshPro/Distance Field Overlay" {
 
 Properties {
 	_FaceTex			("Face Texture", 2D) = "white" {}
-	_FaceUVSpeedX		("Face UV Speed X", Range(-5, 5)) = 0.0
-	_FaceUVSpeedY		("Face UV Speed Y", Range(-5, 5)) = 0.0
+	_FaceUVmoveSpeedX		("Face UV moveSpeed X", Range(-5, 5)) = 0.0
+	_FaceUVmoveSpeedY		("Face UV moveSpeed Y", Range(-5, 5)) = 0.0
 	[HDR]_FaceColor		("Face Color", Color) = (1,1,1,1)
 	_FaceDilate			("Face Dilate", Range(-1,1)) = 0
 
 	[HDR]_OutlineColor	("Outline Color", Color) = (0,0,0,1)
 	_OutlineTex			("Outline Texture", 2D) = "white" {}
-	_OutlineUVSpeedX	("Outline UV Speed X", Range(-5, 5)) = 0.0
-	_OutlineUVSpeedY	("Outline UV Speed Y", Range(-5, 5)) = 0.0
+	_OutlineUVmoveSpeedX	("Outline UV moveSpeed X", Range(-5, 5)) = 0.0
+	_OutlineUVmoveSpeedY	("Outline UV moveSpeed Y", Range(-5, 5)) = 0.0
 	_OutlineWidth		("Outline Thickness", Range(0, 1)) = 0
 	_OutlineSoftness	("Outline Softness", Range(0,1)) = 0
 
@@ -256,8 +256,8 @@ SubShader {
 
 			faceColor.rgb *= input.color.rgb;
 
-			faceColor *= tex2D(_FaceTex, input.textures.xy + float2(_FaceUVSpeedX, _FaceUVSpeedY) * _Time.y);
-			outlineColor *= tex2D(_OutlineTex, input.textures.zw + float2(_OutlineUVSpeedX, _OutlineUVSpeedY) * _Time.y);
+			faceColor *= tex2D(_FaceTex, input.textures.xy + float2(_FaceUVmoveSpeedX, _FaceUVmoveSpeedY) * _Time.y);
+			outlineColor *= tex2D(_OutlineTex, input.textures.zw + float2(_OutlineUVmoveSpeedX, _OutlineUVmoveSpeedY) * _Time.y);
 
 			faceColor = GetColor(sd, faceColor, outlineColor, outline, softness);
 
@@ -265,7 +265,7 @@ SubShader {
 			float3 dxy = float3(0.5 / _TextureWidth, 0.5 / _TextureHeight, 0);
 			float3 n = GetSurfaceNormal(input.atlas, weight, dxy);
 
-			float3 bump = UnpackNormal(tex2D(_BumpMap, input.textures.xy + float2(_FaceUVSpeedX, _FaceUVSpeedY) * _Time.y)).xyz;
+			float3 bump = UnpackNormal(tex2D(_BumpMap, input.textures.xy + float2(_FaceUVmoveSpeedX, _FaceUVmoveSpeedY) * _Time.y)).xyz;
 			bump *= lerp(_BumpFace, _BumpOutline, saturate(sd + outline * 0.5));
 			n = normalize(n- bump);
 
