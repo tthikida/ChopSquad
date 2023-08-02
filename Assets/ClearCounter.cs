@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ClearCounter : MonoBehaviour
 {
-    public void Interact()
+    public void Interact(string objName)
     {
-        Debug.Log("Interacting!");
+        Debug.Log($"Interacting with {objName}!");
     }
 }
