@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2959139207573630922}
   - component: {fileID: 3732212257672856169}
   - component: {fileID: 6140725970644004137}
+  - component: {fileID: 7546392207570223369}
+  - component: {fileID: 6276152948625334275}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -30,8 +32,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2721405434667626725}
   - {fileID: 3529909448763913835}
+  - {fileID: 2721405434667626725}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  gameInput: {fileID: 0}
 --- !u!114 &6140725970644004137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +63,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6127adc73ef4fbc9bcd0619f2475cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &7546392207570223369
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724089784601890775}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!136 &6276152948625334275
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724089784601890775}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6553206
+  m_Height: 2.0326583
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9409026, z: 0.005307257}
 --- !u!1 &3754866288563277371
 GameObject:
   m_ObjectHideFlags: 0
