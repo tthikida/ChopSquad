@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ClearCounter : MonoBehaviour
 {
-    public void Interact(string objName)
+
+    public void Interact()
     {
-        Debug.Log($"Interacting with {objName}!");
+        Debug.Log($"Interacting with an object");
+        FindObjectOfType<Player>().HandleInteractions();
     }
 }
