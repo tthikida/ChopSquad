@@ -39,20 +39,20 @@ public class Player : MonoBehaviour
     {
         if(selectedCounter != null)
         {
-            //HandleInteractions();
+            HandleInteractions();
             selectedCounter.Interact();
         }
         else
         {
-            Debug.Log("no counter selected");
             HandleInteractions();
+            selectedCounter.Interact();
+            //Debug.Log("no counter selected");
         }
     }
 
     void Update()
     {
         HandleMovement();
-        //HandleInteractions();
     }
 
     public bool IsWalking()
@@ -123,24 +123,24 @@ public class Player : MonoBehaviour
             {
                 if(clearCounter != selectedCounter)
                 {
+                    Debug.Log("SetSelectedCounter(clearCounter)");
                     selectedCounter = clearCounter;
-
                     SetSelectedCounter(clearCounter);
                 }
                 else
                 {
+                    Debug.Log("SetSelectedCounter(null_1)");
                     selectedCounter = null;
-
                     SetSelectedCounter(null);
                 }
             }
             else
             {
+                Debug.Log("SetSelectedCounter(null_2)");
                 selectedCounter = null;
-
                 SetSelectedCounter(null);
             }
-        Debug.Log(selectedCounter);
+        //Debug.Log(selectedCounter);
         }
     }
 
