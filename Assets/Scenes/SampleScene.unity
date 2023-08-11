@@ -200,7 +200,7 @@ PrefabInstance:
     - target: {fileID: 2654306017924495882, guid: b9a204b921b53ac47bd6a50ce639c502,
         type: 3}
       propertyPath: m_Name
-      value: ClearCounter
+      value: Right Clear Counter
       objectReference: {fileID: 0}
     - target: {fileID: 6058973998468624988, guid: b9a204b921b53ac47bd6a50ce639c502,
         type: 3}
@@ -214,10 +214,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7223669368893294738, guid: b9a204b921b53ac47bd6a50ce639c502,
         type: 3}
+      propertyPath: testbool
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223669368893294738, guid: b9a204b921b53ac47bd6a50ce639c502,
+        type: 3}
       propertyPath: tomatoPrefab
       value: 
       objectReference: {fileID: 3812876574508226176, guid: 81e9fe7b3cd084242a088e945f531f38,
         type: 3}
+    - target: {fileID: 7223669368893294738, guid: b9a204b921b53ac47bd6a50ce639c502,
+        type: 3}
+      propertyPath: secondClearCounter
+      value: 
+      objectReference: {fileID: 1390965897}
     - target: {fileID: 7527715799764350351, guid: b9a204b921b53ac47bd6a50ce639c502,
         type: 3}
       propertyPath: selectedCounterMesh
@@ -850,12 +860,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 39032979}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1390965897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7223669368893294738, guid: b9a204b921b53ac47bd6a50ce639c502,
+    type: 3}
+  m_PrefabInstance: {fileID: 1950041410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3eaa14e83f14afdae56259f2553335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1747876455 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1627714786250696680, guid: b9a204b921b53ac47bd6a50ce639c502,
     type: 3}
   m_PrefabInstance: {fileID: 1950041410}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1756918244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7223669368893294738, guid: b9a204b921b53ac47bd6a50ce639c502,
+    type: 3}
+  m_PrefabInstance: {fileID: 39032979}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3eaa14e83f14afdae56259f2553335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1950041410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -927,7 +961,7 @@ PrefabInstance:
     - target: {fileID: 2654306017924495882, guid: b9a204b921b53ac47bd6a50ce639c502,
         type: 3}
       propertyPath: m_Name
-      value: ClearCounter (1)
+      value: Left Clear Counter
       objectReference: {fileID: 0}
     - target: {fileID: 6058973998468624988, guid: b9a204b921b53ac47bd6a50ce639c502,
         type: 3}
@@ -937,6 +971,11 @@ PrefabInstance:
     - target: {fileID: 6694819613894475789, guid: b9a204b921b53ac47bd6a50ce639c502,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223669368893294738, guid: b9a204b921b53ac47bd6a50ce639c502,
+        type: 3}
+      propertyPath: testbool
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7223669368893294738, guid: b9a204b921b53ac47bd6a50ce639c502,
@@ -951,6 +990,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8f255ec1ac1b146baa309a784cca110b,
         type: 2}
+    - target: {fileID: 7223669368893294738, guid: b9a204b921b53ac47bd6a50ce639c502,
+        type: 3}
+      propertyPath: secondClearCounter
+      value: 
+      objectReference: {fileID: 1756918244}
     - target: {fileID: 7527715799764350351, guid: b9a204b921b53ac47bd6a50ce639c502,
         type: 3}
       propertyPath: selectedCounterMesh
